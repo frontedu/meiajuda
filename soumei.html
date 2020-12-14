@@ -1,377 +1,425 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
-    <title>Cadastre-se! MeiAjuda</title>
-    <!-- Preloader -->
-    <style>
-        @keyframes hidePreloader {
-            0% {
-              width: 100%;
-              height: 100%;
-            }
-    
-            100% {
-              width: 0;
-              height: 0;
-            }
-          }
-    
-          body > div.preloader {
-            position: fixed;
-            background: white;
-            width: 100%;
-            height: 100%;
-            z-index: 1071;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            overflow: hidden;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-    
-          body:not(.loaded) > div.preloader {
-            opacity: 1;
-          }
-    
-          body:not(.loaded) {
-            overflow: hidden;
-          }
-    
-          body.loaded > div.preloader {
-            animation: hidePreloader 0.5s linear 0.5s forwards;
-          }
-    </style>
-    <script>
-        window.addEventListener("load", function () {
-            setTimeout(function () {
-              document.querySelector("body").classList.add("loaded");
-            }, 300);
-          });
-    </script>
+    <title>MeiAjuda - Cadastro
+    </title>
     <!-- Favicon -->
     <link rel="icon" href="assets/img/brand/favicon.png" type="image/png" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/minify.css" />
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/meiajuda.css" id="stylesheet" />
-</head>
-
-<body>
+    <style>
+      @keyframes hidePreloader {
+        0% {
+          width: 100%;
+          height: 100%;
+        }
+        100% {
+          width: 0;
+          height: 0;
+        }
+      }
+      body > div.preloader {
+        position: fixed;
+        background: white;
+        width: 100%;
+        height: 100%;
+        z-index: 1071;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        overflow: hidden;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body:not(.loaded) > div.preloader {
+        opacity: 1;
+      }
+      body:not(.loaded) {
+        overflow: hidden;
+      }
+      body.loaded > div.preloader {
+        animation: hidePreloader 0.5s linear 0.5s forwards;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.querySelector("body").classList.add("loaded");
+        }
+                   , 300);
+      }
+                             );
+    </script>
+  </head>
+  <body>
     <!-- Preloader -->
     <div class="preloader">
-        <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Carregando...</span>
-        </div>
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Carregando...
+        </span>
+      </div>
     </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false" aria-labelledby="modal-cookies" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
-            <div class="modal-content bg-dark-dark">
-                <div class="modal-body">
-                    <!-- Text -->
-                    <p class="text-sm text-white mb-3">
-                        Ao utilizar o site MeiAjuda, você concorda que podemos colocar cookies em seu dispositivo, conforme descrito em nossa Política de Privacidade e neste Aviso de Cookie.
-                    </p>
-                    <!-- Buttons -->
-                    <a href="#" class="btn btn-sm btn-white" target="_blank">Saiba Mais</a>
-                    <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK!</button>
-                </div>
-            </div>
+      <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
+        <div class="modal-content bg-dark-dark">
+          <div class="modal-body">
+            <!-- Text -->
+            <p class="text-sm text-white mb-3">
+              Ao utilizar o site MeiAjuda, você concorda que podemos colocar cookies em seu dispositivo, conforme descrito em nossa Política de Privacidade e neste Aviso de Cookie.
+            </p>
+            <!-- Buttons -->
+            <a href="#" class="btn btn-sm btn-white" target="_blank">Saiba Mais
+            </a>
+            <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK!
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="/">
-                <img alt="Image placeholder" src="assets/img/brand/logo.svg" id="navbar-logo" />
-            </a>
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <img alt="Image placeholder" src="assets/img/brand/logo.svg" id="navbar-logo" />
+        </a>
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+          </span>
         </button>
-            <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
-                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Para Você</a>
-                        <div class="dropdown-menu dropdown-menu-single">
-                            <a href="/" class="dropdown-item">Cliente</a>
-                            <a href="#" class="dropdown-item">Empreendedor</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="mailto:xaeaxii@frontedu.me" class="dropdown-item">Imprensa</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
-                    </li>
-                </ul>
-                <!-- Button -->
-                <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="login.html">
-            Entrar
-          </a>
-                <!-- Mobile button -->
-                <div class="d-lg-none text-center">
-                    <a href="login.html" class="btn btn-block btn-sm btn-warning">Entrar</a>
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://abre.ai/meiajudadoc/" target="_blank">Documentação
+                </a>
+            </li>
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Para Você
+              </a>
+              <div class="dropdown-menu dropdown-menu-single">
+                <a href="/" class="dropdown-item">Cliente
+                </a>
+                <a href="#" class="dropdown-item">Empreendedor
+                </a>
+                <div class="dropdown-divider">
                 </div>
-            </div>
+                <a href="mailto:contato@frontedu.me" class="dropdown-item">Imprensa
+                </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:meiajuda@frontedu.me">Contato
+              </a>
+            </li>
+          </ul>
+          <!-- Button -->
+          <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="login.html">
+            Iniciar Sessão
+          </a>
+          <!-- Mobile button -->
+          <div class="d-lg-none text-center">
+            <a href="login.html" class="btn btn-block btn-sm btn-warning">Iniciar Sessão
+            </a>
+          </div>
         </div>
+      </div>
     </nav>
     <!-- Main content -->
     <section class="slice py-8 bg-dark">
-        <div class="container py-5">
-            <div class="row row-grid align-items-center">
-                <div class="col-lg-8 text-center text-lg-left">
-                    <!-- Heading -->
-                    <h1 class="text-white mb-4">
-                        Nós ajudamos você a vender<br /> nesses tempos difíceis. <br /> E melhor, de forma gratuita e rápida!
-                    </h1>
-                    <!-- Text -->
-                    <p class="lead text-white opacity-8">
-                        Você também não precisa ter CNPJ pra anunciar seu serviço aqui!
-                    </p>
-                    <!-- Buttons -->
-                    <div class="mt-5">
-                        <a href="https://ccomp-pte.herokuapp.com/meiajuda/singup/" class="btn btn-warning btn-lg btn-icon">
-                            <span class="btn-inner--icon">
-                  <i data-feather="edit-3"></i>
+      <div class="container py-5">
+        <div class="row row-grid align-items-center">
+          <div class="col-lg-8 text-center text-lg-left">
+            <!-- Heading -->
+            <h1 class="text-white mb-4">
+              Nós ajudamos você a vender
+              <br /> nesses tempos difíceis. 
+              <br /> E melhor, de forma gratuita e rápida!
+            </h1>
+            <!-- Text -->
+            <p class="lead text-white opacity-8">
+              Você também não precisa ter CNPJ pra anunciar seu serviço aqui!
+            </p>
+            <!-- Buttons -->
+            <div class="mt-5">
+              <a href="https://ccomp-pte.herokuapp.com/meiajuda/singup/" class="btn btn-warning btn-lg btn-icon">
+                <span class="btn-inner--icon">
+                  <i data-feather="edit-3">
+                  </i>
                 </span>
-                            <span class="btn-inner--text">Cadastre-se</span>
-                        </a>
-                    </div>
-                </div>
+                <span class="btn-inner--text">Cadastre-se pelo Kanri
+                </span>
+              </a>
             </div>
+          </div>
         </div>
-        <!-- SVG separator -->
-        <div class="shape-container shape-line shape-position-bottom">
-            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background: new 0 0 2560 100;" xml:space="preserve" class="">
-          <polygon points="2560 0 2560 100 0 100"></polygon>
+      </div>
+      <!-- SVG separator -->
+      <div class="shape-container shape-line shape-position-bottom">
+        <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background: new 0 0 2560 100;" xml:space="preserve" class="">
+          <polygon points="2560 0 2560 100 0 100">
+          </polygon>
         </svg>
-        </div>
+      </div>
     </section>
     <section class="slice slice-lg-mei">
-        <div class="container">
-            <span class="badge badge-primary badge-pill">Como funciona?</span>
-            <div class="row mt-4">
-                <div class="col-lg-6 pr-lg-5">
-                    <p class="h5 lh-180 mb-3">
-                        Com um simples cadastro o seu negócio já começa a aparecer para possiveis clientes de sua região. Tudo isso sem pagar um centavo e sem exigir seu tempo!
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <p class="lead lh-180">
-                        Pessoas interessadas em ajudar encontrará seu negócio apenas conversando com nosso assistente virtual em aplicativos convencionais como WhatsApp, Messenger e Telegram. De forma rápida e nunca antes vista.
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <span class="badge badge-primary badge-pill">Como funciona?
+        </span>
+        <div class="row mt-4">
+          <div class="col-lg-6 pr-lg-5">
+            <p class="h5 lh-180 mb-3">
+              Com um simples cadastro o seu negócio já começa a aparecer para possiveis clientes de sua região. Tudo isso sem pagar um centavo e sem exigir seu tempo!
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p class="lead lh-180">
+              Pessoas interessadas em ajudar encontrará seu negócio apenas conversando com nosso assistente virtual em aplicativos convencionais como WhatsApp, Messenger e Telegram. De forma rápida e nunca antes vista.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <section class="slice slice-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-6">
-                    <img src="assets/img/theme/contabil.jpeg" alt="Image" class="rounded-lg img-fluid" />
-                    <div class="text-right mt-4">
-                        <img src="assets/img/theme/esmalte.jpeg" alt="Image" class="rounded-lg img-fluid w-50" />
-                    </div>
-                </div>
-                <div class="col-lg-7 col-6">
-                    <img src="assets/img/theme/chad.jpeg" alt="Image" class="rounded-lg img-fluid w-75" />
-                    <div class="text-right mt-4">
-                        <img src="assets/img/theme/cut.jpeg" alt="Image" class="rounded-lg img-fluid" />
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-6">
+            <img src="assets/img/theme/contabil.jpeg" alt="Image" class="rounded-lg img-fluid" />
+            <div class="text-right mt-4">
+              <img src="assets/img/theme/esmalte.jpeg" alt="Image" class="rounded-lg img-fluid w-50" />
             </div>
+          </div>
+          <div class="col-lg-7 col-6">
+            <img src="assets/img/theme/chad.jpeg" alt="Image" class="rounded-lg img-fluid w-75" />
+            <div class="text-right mt-4">
+              <img src="assets/img/theme/cut.jpeg" alt="Image" class="rounded-lg img-fluid" />
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <section class="slice slice-lg pt-10 bg-primary">
-        <!-- SVG separator -->
-        <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
-            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background: new 0 0 2560 100;" xml:space="preserve" class="">
-          <polygon points="2560 0 2560 100 0 100"></polygon>
+      <!-- SVG separator -->
+      <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+        <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background: new 0 0 2560 100;" xml:space="preserve" class="">
+          <polygon points="2560 0 2560 100 0 100">
+          </polygon>
         </svg>
+      </div>
+      <!-- Container -->
+      <div class="container">
+        <div class="row row-grid">
+          <div class="col-lg-8">
+            <!-- Badge -->
+            <span class="badge badge-warning badge-pill">Por que escolher a MeiAjuda?
+            </span>
+            <!-- Title -->
+            <h2 class="my-4 text-white">Não temos fins lucrativos.
+            </h2>
+            <!-- Text -->
+            <p class="lead text-white lh-190">
+              A MeiAjuda é a única plataforma que conecta clientes com empreendedores locais sem cobrar por isso. Junte-se a diversos outros micro empreendedores e aumente sua clientela divulgando com a gente. Isso é ser parceiro de verdade!
+            </p>
+          </div>
         </div>
-        <!-- Container -->
-        <div class="container">
-            <div class="row row-grid">
-                <div class="col-lg-8">
-                    <!-- Badge -->
-                    <span class="badge badge-warning badge-pill">Por que escolher a MeiAjuda?</span>
-                    <!-- Title -->
-                    <h2 class="my-4 text-white">Não temos fins lucrativos.</h2>
-                    <!-- Text -->
-                    <p class="lead text-white lh-190">
-                        A MeiAjuda é a única plataforma que conecta clientes com empreendedores locais sem cobrar por isso. Junte-se a diversos outros micro empreendedores e aumente sua clientela divulgando com a gente. Isso é ser parceiro de verdade!
+        <!-- Milestones -->
+        <div class="row mt-6">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                  <div class="p-4 text-center text-sm-left">
+                    <h3 class="mb-0">100%
+                    </h3>
+                    <p class="text-muted mb-0">
+                      Gratuito
                     </p>
+                  </div>
                 </div>
-            </div>
-            <!-- Milestones -->
-            <div class="row mt-6">
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
-                                <div class="p-4 text-center text-sm-left">
-                                    <h3 class="mb-0">100%</h3>
-                                    <p class="text-muted mb-0">
-                                        Gratuito
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
-                                <div class="p-4 text-center text-sm-left">
-                                    <h3 class="mb-0">100%</h3>
-                                    <p class="text-muted mb-0">
-                                        Prático
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
-                                <div class="p-4 text-center text-sm-left">
-                                    <h3 class="mb-0">100%</h3>
-                                    <p class="text-muted mb-0">
-                                        Parceiro
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                  <div class="p-4 text-center text-sm-left">
+                    <h3 class="mb-0">100%
+                    </h3>
+                    <p class="text-muted mb-0">
+                      Prático
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                  <div class="p-4 text-center text-sm-left">
+                    <h3 class="mb-0">100%
+                    </h3>
+                    <p class="text-muted mb-0">
+                      Parceiro
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
     <section class="slice slice-lg bg-section-secondary">
-        <div class="container text-center">
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-8">
-                    <!-- Title -->
-                    <!-- Text -->
-                    <!-- Buttons -->
-                    <h2 class="h1 strong-600">
-                        Bacana, né?
-                    </h2>
-                    <p>
-                        Em menos de 5 minutos você terá cadastrado seu negócio. Tá esperando o quê?
-                    </p>
-                    <div class="mt-5">
-                        <a href="https://ccomp-pte.herokuapp.com/meiajuda/singup/" class="btn btn-lg btn-warning px-4">
-                Cadastre-se
+      <div class="container text-center">
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-8">
+            <!-- Title -->
+            <!-- Text -->
+            <!-- Buttons -->
+            <h3>
+              Em menos de dez minutos você terá feito o cadastro do seu negócio!
+            </h3>
+            <div class="mt-5">
+              <a href="https://ccomp-pte.herokuapp.com/meiajuda/singup/" class="btn btn-lg btn-warning px-4">
+                Cadastre-se pelo Kanri
               </a>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <footer class="position-relative" id="footer-main">
-        <div class="footer pt-lg-7 footer-dark bg-dark">
-            <!-- SVG shape -->
-            <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
-                <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class=" fill-section-secondary">
-                    <polygon points="2560 0 2560 100 0 100"></polygon>
-                </svg>
-            </div>
-            <!-- Footer -->
-            <div class="container pt-4">
-                <div class="row">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <!-- Theme's logo -->
-                        <a href="soumei.html">
-                            <img alt="Image placeholder" src="assets/img/brand/light.svg" id="footer-logo">
-                        </a>
-                        <!-- Somos -->
-                        <p class="mt-4 text-sm opacity-8 pr-lg-4">Conectamos você com negócios locais que precisam vender justamente nesse momento.
-                        </p>                     
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">Sobre</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Como funciona</a></li>
-                            <li><a href="#">Quem somos</a></li>
-                            <li><a href="mailto:xaeaxii@frontedu.me">Parceiros</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">Integração</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="https://t.me/MeiAjuda_bot">Telegram</a></li>
-                            <li><a href="https://www.messenger.com/t/MeiAjuda.br">Messenger</a></li>
-                            <li><a href="#">WhatsApp</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr class="divider divider-fade divider-dark my-footer">
-                <div class="row align-items-center justify-content-md-between pb-4">
-                    <div class="col-md-6">
-                        <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                            © Desenvolvido com 🧡 e bastante ☕ pela <a href="mailto:xaeaxii@frontedu.me" class="font-weight-bold" target="_blank">X Æ A-XII</a>.
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Termos
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Privacidade
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Cookies
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    API
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="footer pt-lg-7 footer-dark bg-dark">
+        <!-- SVG shape -->
+        <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+          <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class=" fill-section-secondary">
+            <polygon points="2560 0 2560 100 0 100">
+            </polygon>
+          </svg>
         </div>
+        <!-- Footer -->
+        <div class="container pt-4">
+          <div class="row">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <!-- Theme's logo -->
+              <a href="soumei.html">
+                <img alt="Image placeholder" src="assets/img/brand/light.svg" id="footer-logo">
+              </a>
+              <!-- Somos -->
+              <p class="mt-4 text-sm opacity-8 pr-lg-4">Conectamos você com negócios locais que precisam vender justamente nesse momento.
+              </p>                     
+            </div>
+            <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+              <h6 class="heading mb-3">Sobre
+              </h6>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#">Como funciona
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Quem somos
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:meiajuda@frontedu.me">Parceiros
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+              <h6 class="heading mb-3">Integração
+              </h6>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="https://t.me/MeiAjuda_bot/">Telegram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://m.me/MeiAjuda.br/">Messenger
+                  </a>
+                </li>
+                <li>
+                  <a href="#">WhatsApp
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr class="divider divider-fade divider-dark my-footer">
+          <div class="row align-items-center justify-content-md-between pb-4">
+            <div class="col-md-6">
+              <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                © Desenvolvido com 🧡 e bastante ☕ pela 
+                <a href="mailto:meiajuda@frontedu.me" class="font-weight-bold" target="_blank">X Æ A-12
+                </a>.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Termos
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Privacidade
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Cookies
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    API
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- Core JS  -->
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/svg-injector/dist/svg-injector.min.js"></script>
-    <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+    <script src="assets/libs/jquery/dist/jquery.min.js">
+    </script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="assets/libs/svg-injector/dist/svg-injector.min.js">
+    </script>
+    <script src="assets/libs/feather-icons/dist/feather.min.js">
+    </script>
     <!-- mei.js -->
-    <script src="assets/js/gama.js"></script>
+    <script src="assets/js/gama.js">
+    </script>
     <!-- Feather Icons -->
     <script>
-        feather.replace({
-            width: "1em",
-            height: "1em",
-          });
+      feather.replace({
+        width: "1em",
+        height: "1em",
+      }
+                     );
     </script>
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script>
-    (function () {
+    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+    </script>
+    <script>
+      (function () {
         window.onload = function () {
-            new BlipChat()
+          new BlipChat()
             .withAppKey('bWVpYWp1ZGFyZWFsbWVzc2VuZ2VyOjU3ODgzNTkzLTYxYjctNDg1OS1hYzY0LTJjZjQ1YzczYTY0Ng==')
-            .withButton({"color":"#2CC3D5","icon":""})
+            .withButton({
+            "color":"#2CC3D5","icon":""}
+                       )
             .withCustomCommonUrl('https://chat.blip.ai/')
             .build();
         }
-    })();
-</script>
-</body>
-
+      }
+      )();
+    </script>
+  </body>
 </html>
